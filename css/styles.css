@@ -356,6 +356,8 @@ img {
     padding: 72px 16px 40px;
     display: flex;
     flex-direction: column;
+    max-width: 320px;
+    margin: 0 auto;
 }
 
 .mobile-menu-close-btn {
@@ -365,7 +367,7 @@ img {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    border: 1px solid #8e8f99;
+    border: 1px solid #e7e9fc;
     background: #ffffff;
     display: flex;
     align-items: center;
@@ -396,10 +398,12 @@ img {
     margin-top: auto;
 }
 .mobile-contact-list {
+    margin-top: 48px;
+    margin-bottom: 48px;
     display: flex;
     flex-direction: column;
     gap: 24px;
-    margin-top: 48px 0;
+    font-style: normal;
 }
 .mobile-contact-phone {
     font-weight: 700;
@@ -441,6 +445,9 @@ img {
 @media screen and (min-width: 768px) {
     .mobile-menu {
         display: none;
+    }
+    .mobile-menu-container {
+        max-width: 768px;
     }
 }
 
@@ -501,7 +508,7 @@ img {
 }
 @media screen and (min-width: 1158px) and (min-resolution: 192dpi){
     .hero {
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-desktop.jpg);
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-desktop@2x.jpg);
     }
     
 }
@@ -972,6 +979,8 @@ color: #2e2f42;
 }
 
 .footer-form {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 16px;
 }
@@ -1117,9 +1126,11 @@ position: relative;
     align-items: center;
     justify-content: center;
     padding: 15px;
+
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+    
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-hidden.is-open {
@@ -1301,7 +1312,56 @@ position: relative;
 }
 
 /* =======================================================MOBILE FIRST STYLES========================================================*/
-
+/* ====================MODAL WINDOW FOR ORDER SERVICE BUTTON============================== */
+@media screen and (max-width: 767px) {
+    .modal-content {
+        padding: 56px 16px 16px;
+    }
+    .modal-checkbox-custom {
+        width: 16px;
+        height: 16px;
+    }
+    .modal-label-checkbox {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        color: #8e8f99;
+        margin-top: 16px;
+        margin-bottom: 24px;
+    }
+    .modal-checkbox-custom {
+        width: 16px;
+        height: 16px;
+        border: 1px solid rgba(46, 47, 66, 0.4);
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background-color: transparent;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .modal-checkbox-icon {
+        fill: #f4f4fd;
+        opacity: 0;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .modal-checkbox:checked + .modal-checkbox-custom .modal-checkbox-icon {
+        opacity: 1;
+    }
+    .modal-privecy-link {
+        display: inline;
+        white-space: nowrap;
+        color: #4d5ae5;
+        text-decoration: underline;
+    }
+}
 /* ======FEATURES MOBILE SECTION ======================== */
 .team-list {
     display: flex;
@@ -1452,6 +1512,11 @@ position: relative;
     margin-top: 0;
 }
 }
+@media screen and (min-width: 768px) and (max-width: 1157px)   {
+    .footer-container {
+        padding-left: 120px;
+    }
+}
 @media screen and (min-width: 768px) {
 .footer-container {
 flex-direction: row;
@@ -1475,5 +1540,55 @@ flex-direction: row;
     .footer-form-button {
     margin-top: 0;
     margin-left: 24px;
+    }
+}
+
+/* =========================DESKTOP STYLES======================================== */
+/* ========HEADER SECTION================ */
+@media screen and (min-width: 1158px) {
+    .header .contact-list {
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+    }
+    
+    .header .contact-link {
+        padding: 24px 0;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+    }
+
+    .header-address .contact-list {
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    }
+
+    .header-address .contact-link {
+    padding: 24px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    }
+}
+
+/* ================DESCTOP FOOTER SECTION================ */
+@media screen and (min-width: 1158px) {
+    .footer-container {
+        display: flex;
+        align-items: flex-start;
+    }
+    .footer-info {
+        max-width: 264px;
+    }
+    .footer-social {
+        margin-left: 120px;
+    }
+    .footer-container-form {
+        margin-left: auto;
+    }
+    .footer-container-form {
+        align-items: flex-start;
     }
 }
